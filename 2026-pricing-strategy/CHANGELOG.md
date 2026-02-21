@@ -7,40 +7,36 @@ All notable pricing decisions and strategy updates for QC 2026.
 ### Estimate Template Rebuilt (`QC_Estimate_Template_2026_v2.xlsx`)
 
 #### Client Setup
-- Replaced single flat markup field (C19 = 54%) with 11-category markup table (rows 19–31)
-- Each category has its own editable markup percentage with rationale note
+- Replaced single flat markup (C19 = 54%) with 11-category markup table (rows 22–34)
+- Each markup cell has a data validation dropdown (5% increments: 50%–200%)
 - Added "Absolute Floor: 54%" reference row
-- Created 11 named ranges (`Markup_Catering`, `Markup_Venues`, `Markup_AV`, etc.) for readable cross-sheet formulas
-- Shifted CC Processing, Commission, GDP, Restaurant Fees, How-to-Use, and Tax Table sections down 12 rows
-- Updated `LocationList` named range to match shifted tax table position
+- Created `CategoryTable` and `CategoryList` named ranges for VLOOKUP-based formulas
+- Added new fields: **Company Name** (B11), **Program Name** (B12), **Client Hotel** (B13)
+- Formatted Event Time (B10) as h:mm AM/PM
+- Ensured dropdowns on all fee overrides (Service Charge, Gratuity, Admin, GDP, Commission)
+- Updated `LocationList` named range and tax lookup VLOOKUPs for shifted rows
 
 #### Venue Estimate
-- Replaced all flat-markup formulas with category-specific named range references:
-  - F&B (rows 21–23) → `Markup_Catering` (54%)
-  - Staffing (row 25) → `Markup_Staffing` (90%)
-  - Catering/Additional Equipment (rows 26, 28) → `Markup_AV` (65%)
-  - Rental Equipment (row 27) → `Markup_Decor` (85%)
-  - Venue Fees (rows 30–32) → `Markup_Venues` (60%)
-  - QC Staff (rows 35–37) → `Markup_Staffing` (90%)
-- Added Margin Health Indicator (✓ STRONG / → ON TARGET / ⚠ REVIEW / ✗ BELOW FLOOR)
-- Added Estimated OpEx row (hours × $90/hr)
-- Added True Net Profit and True Net Margin % calculations
-- Added True Net Health Indicator (✓ STRONG / → ON TARGET / ⚠ THIN / ✗ LOSING MONEY)
-- Updated all cross-sheet references for shifted Client Setup rows
+- Added **Category column (G)** with dropdown on every line item — auto-guesses category by section
+- Client Cost formulas use `VLOOKUP(G{row}, CategoryTable, 2, FALSE)` — team can override category per row
+- NA Beverages (row 26) auto-populates quantity from guest count
+- Default qty = 1 pre-filled on equipment, venue, and staffing rows
+- QC Staff auto-calculates: 0–50 guests = 1, 51–100 = 2, 101+ = 3 (with override dropdown)
+- QC Staff unit price = $500
+- Added Company Name, Program Name, Client Hotel propagated from Client Setup
+- Added Margin Health Indicator, Estimated OpEx, True Net Profit, True Net Margin %, True Net Health
+- Updated all summary formulas, client-ready table, and cross-sheet references
 
 #### Decor Estimate
-- Replaced all flat-markup formulas with category-specific named range references:
-  - Floral Product, Seating, Lounge, Tables, Rugs/Accessories (various rows) → `Markup_Decor` (85%)
-  - Floral Fees, Rental Fees (rows 24–26, 66–71) → `Markup_Delivery` (85%)
-  - AV Equipment (rows 77–86) → `Markup_AV` (65%)
-  - AV Fees & Labor (rows 88–92) → `Markup_Staffing` (90%)
-- Added same margin analysis rows as Venue (Health Indicator, OpEx, True Net)
-- Updated all cross-sheet references
+- Added **Category column (I)** with dropdown on every line item — auto-guesses by section
+- Client Cost formulas use VLOOKUP against CategoryTable (same pattern as Venue)
+- Added Company Name, Program Name, Client Hotel from Client Setup
+- Added margin analysis rows (Health, OpEx, True Net Profit/Margin/Health)
+- Updated CC Processing, Commission, GDP, and tax rate cross-sheet references
 
 #### SAMPLE Decor Estimate
-- Applied same category-based formula updates as Decor Estimate
-- All sample data preserved for team reference
-- Added margin analysis rows
+- Applied all Decor Estimate changes — VLOOKUP formulas, category dropdowns, margin analysis
+- All sample data preserved (florals, furniture, AV, delivery fees)
 
 ## [1.0.0] — 2026-02-21
 
