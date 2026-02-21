@@ -1,0 +1,11 @@
+{
+  "version": "2026-01",
+  "cc_processing_pct": 3.5,
+  "service_charge_restaurants_pct": 20,
+  "guide_gratuity_pct": 20,
+  "admin_fee_pct": 5,
+  "minimum_billing_guests_tours": 15,
+  "management_fee_range": [2500, 10000],
+  "management_fee_threshold": 40000,
+  "minimum_program_fee_range": [1500, 2500]
+}

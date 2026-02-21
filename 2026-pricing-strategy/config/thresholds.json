@@ -1,0 +1,43 @@
+{
+  "version": "2026-01",
+  "margin_targets": {
+    "no_commission": {
+      "label": "QC Margin (no commission)",
+      "floor_pct": 35,
+      "target_range_pct": [42, 45],
+      "stretch_pct": 50
+    },
+    "gdp_only": {
+      "label": "QC Margin (6.5% GDP)",
+      "floor_pct": 30,
+      "target_range_pct": [38, 42],
+      "stretch_pct": 45
+    },
+    "full_commission": {
+      "label": "QC Margin (21.5% commission)",
+      "floor_pct": 22,
+      "target_range_pct": [28, 32],
+      "stretch_pct": 35
+    },
+    "true_net": {
+      "label": "True Net Margin",
+      "floor_pct": 5,
+      "target_range_pct": [10, 15],
+      "stretch_pct": 18
+    }
+  },
+  "health_indicators": {
+    "qc_gross_margin": {
+      "strong": { "threshold_pct": 45, "label": "✓ STRONG", "meaning": "Healthy margin. Program is well-priced." },
+      "on_target": { "threshold_pct": 35, "label": "→ ON TARGET", "meaning": "Acceptable. Monitor for scope creep." },
+      "review": { "threshold_pct": 25, "label": "⚠ REVIEW", "meaning": "Thin margin. May not cover OpEx." },
+      "below_floor": { "threshold_pct": 0, "label": "✗ BELOW FLOOR", "meaning": "Below minimum. Do not proceed without owner approval." }
+    },
+    "true_net_margin": {
+      "strong": { "threshold_pct": 15, "label": "✓ STRONG", "meaning": "Profitable after all costs including team time." },
+      "on_target": { "threshold_pct": 7, "label": "→ ON TARGET", "meaning": "Acceptable net return. Keep hours in check." },
+      "thin": { "threshold_pct": 0, "label": "⚠ THIN", "meaning": "Breaking even. Only justified for strategic relationship value." },
+      "losing_money": { "threshold_pct": -999, "label": "✗ LOSING MONEY", "meaning": "Program costs more than it generates. Walk away or restructure." }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": "2026-01",
+  "absolute_floor_markup_pct": 54,
+  "typical_blended_range_pct": [65, 75],
+  "categories": {
+    "catering_fnb": {
+      "label": "Catering & F&B",
+      "markup_pct": 54,
+      "rationale": "Clients can compare per-head pricing. Hold the floor."
+    },
+    "venues_room_rentals": {
+      "label": "Venues & Room Rentals",
+      "markup_pct": 60,
+      "rationale": "Competitive category; sourcing and negotiation adds value. Push to 60% when managing full venue relationship."
+    },
+    "av_production": {
+      "label": "AV & Production",
+      "markup_pct": 65,
+      "rationale": "Technical coordination, load-in management, vendor liaison. Harder for clients to price-shop."
+    },
+    "decor_design": {
+      "label": "Décor & Design",
+      "markup_pct": 85,
+      "rationale": "Fully custom creative work. No apples-to-apples comparison exists."
+    },
+    "entertainment": {
+      "label": "Entertainment",
+      "markup_pct": 75,
+      "rationale": "Talent sourcing, contract negotiation, rider management, logistics."
+    },
+    "activities_experiences": {
+      "label": "Activities & Experiences",
+      "markup_pct": 75,
+      "rationale": "Curation, coordination, permitting, logistics."
+    },
+    "transportation": {
+      "label": "Transportation",
+      "markup_pct": 75,
+      "rationale": "Route planning, driver coordination, timing, backup plans. High-liability, high-coordination."
+    },
+    "staffing_labor": {
+      "label": "Staffing & Labor",
+      "markup_pct": 90,
+      "rationale": "Recruitment, briefing, scheduling, onsite management. QC owns the outcome."
+    },
+    "purchased_sourced_items": {
+      "label": "Purchased / Sourced Items",
+      "markup_pct": 200,
+      "rationale": "Procurement, handling, inventory, setup, disposal. Small dollar items that take disproportionate time (3× cost)."
+    },
+    "delivery_logistics": {
+      "label": "Delivery & Logistics",
+      "markup_pct": 85,
+      "rationale": "Timing risk, damage liability, coordination."
+    },
+    "tours_guided_experiences": {
+      "label": "Tours & Guided Experiences",
+      "markup_pct": 65,
+      "rationale": "Guide sourcing, route design, F&B coordination. Fixed costs scale across group sizes."
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "version": "2026-01",
+  "scenarios": {
+    "direct_client": {
+      "label": "Direct Client (no commission)",
+      "commission_pct": 0,
+      "cc_fee_pct": 3.5,
+      "net_to_qc_pct": 96.5
+    },
+    "gdp_standard": {
+      "label": "GDP Standard (no client commission)",
+      "commission_pct": 6.5,
+      "cc_fee_pct": 3.5,
+      "net_to_qc_pct": 90.0
+    },
+    "gdp_plus_client": {
+      "label": "GDP + Client Commission",
+      "commission_pct": 21.5,
+      "cc_fee_pct": 3.5,
+      "net_to_qc_pct": 75.0,
+      "commission_breakdown": {
+        "gdp_pct": 6.5,
+        "client_agent_pct": 15.0
+      }
+    }
+  }
+}

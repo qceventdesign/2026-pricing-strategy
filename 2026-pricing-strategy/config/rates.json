@@ -1,0 +1,38 @@
+{
+  "version": "2026-01",
+  "internal_hourly_rate": 90,
+  "tour_staffing": {
+    "licensed_tour_guide": 500,
+    "qc_event_coordinator": 750,
+    "qc_onsite_lead": 1000,
+    "photographer_videographer": 800
+  },
+  "transportation": {
+    "suv_6pax": 450,
+    "sprinter_12_14pax": 850,
+    "mini_bus_24_30pax": 1200,
+    "motor_coach_50_56pax": 1800
+  },
+  "opex_tiers": {
+    "light": {
+      "description": "Single-vendor, simple logistics",
+      "hours_range": [8, 20],
+      "cost_range": [720, 1800]
+    },
+    "standard": {
+      "description": "Multi-vendor, single-day event",
+      "hours_range": [25, 50],
+      "cost_range": [2250, 4500]
+    },
+    "complex": {
+      "description": "Multi-day, multi-vendor, onsite staffing",
+      "hours_range": [50, 100],
+      "cost_range": [4500, 9000]
+    },
+    "enterprise": {
+      "description": "Large-scale, multi-day, 50+ guests, production builds",
+      "hours_range": [100, 160],
+      "cost_range": [9000, 14400]
+    }
+  }
+}
