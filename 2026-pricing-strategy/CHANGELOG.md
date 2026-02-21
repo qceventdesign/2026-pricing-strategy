@@ -2,6 +2,34 @@
 
 All notable pricing decisions and strategy updates for QC 2026.
 
+## [1.2.0] — 2026-02-21
+
+### Travel Expense Calculator (`QC_Estimate_Template_2026_v2.xlsx`)
+
+#### Client Setup
+- Added **QC Travel Rate Table** (rows 52–63) — 10 destinations with drive mileage, flight cost, hotel/night, per diem/day rates
+- Added **Vehicle Rate Table** (rows 65–72) — None, SUV ($450), Sprinter ($850), Mini Bus ($1,200), Motor Coach ($1,800), Custom
+- Created named ranges: `TravelRates`, `DestinationList`, `VehicleRates`, `VehicleList`
+- All rates are editable by the team
+
+#### Venue Estimate
+- Added **QC Travel Expenses** section (rows 65–81) between Client Pricing and Profit & Margin
+- Supports up to 3 staff trips per program with per-trip inputs: destination, travel type, staff count, nights, on-site vehicle, custom vehicle cost
+- Travel Type auto-suggests Drive/Flight based on destination (NYC → Flight, all others → Drive) with manual override dropdown
+- Calculated fields: Travel Cost, Hotel Cost, Per Diem Cost, Vehicle Cost, Trip Total
+- Total Travel Expenses feeds into Profit & Margin Analysis
+- **True Net Profit** now = QC Revenue − OpEx − Travel Expenses
+- Rewrote all Profit & Margin formulas (rows 82–93) after 18-row insert
+
+#### Decor Estimate
+- Added same **QC Travel Expenses** section (rows 110–126)
+- Same 3-trip structure, formulas, and dropdowns as Venue
+- **True Net Profit** updated to deduct travel expenses
+- Rewrote all Profit & Margin formulas (rows 127–138)
+
+#### SAMPLE Decor Estimate
+- Applied all Decor travel changes — formulas active, fields empty
+
 ## [1.1.0] — 2026-02-21
 
 ### Estimate Template Rebuilt (`QC_Estimate_Template_2026_v2.xlsx`)
