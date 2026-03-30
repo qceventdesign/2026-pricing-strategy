@@ -1,9 +1,11 @@
 """Quill Creative Pricing Engine — FastAPI application."""
 
 from __future__ import annotations
+from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from io import BytesIO
 
 from . import pricing_engine, storage, config_loader
@@ -17,10 +19,13 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Serve built frontend static files
+FRONTEND_DIST = Path(__file__).resolve().parent.parent / "frontend" / "dist"
 
 
 # ── Health check ─────────────────────────────────────────────────────────
@@ -274,3 +279,14 @@ def export_estimate_excel(estimate_id: str):
         media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         headers={"Content-Disposition": f'attachment; filename="{filename}"'},
     )
+
+
+# ── Serve frontend ──────────────────────────────────────────────────────
+
+if FRONTEND_DIST.exists():
+    app.mount("/assets", StaticFiles(directory=FRONTEND_DIST / "assets"), name="static")
+
+    @app.get("/{full_path:path}")
+    async def serve_frontend(full_path: str):
+        """Serve the React SPA for all non-API routes."""
+        return FileResponse(FRONTEND_DIST / "index.html")
